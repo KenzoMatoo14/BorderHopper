@@ -1,0 +1,11 @@
+Model Information:
+* title:	Taco Bell Defy
+* source:	https://sketchfab.com/3d-models/taco-bell-defy-dc632cb5feea4dddb1c0b69fa332ecb5
+* author:	Cruft (https://sketchfab.com/cruft42)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Taco Bell Defy" (https://sketchfab.com/3d-models/taco-bell-defy-dc632cb5feea4dddb1c0b69fa332ecb5) by Cruft (https://sketchfab.com/cruft42) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
