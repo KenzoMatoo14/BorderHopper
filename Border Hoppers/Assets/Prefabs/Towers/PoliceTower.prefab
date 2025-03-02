@@ -97,8 +97,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 2
   range: 20
-  cost: 50
+  cost: 30
   firerate: 1.5
+  prioritizeBlackMan: 1
 --- !u!114 &-7202356921536169387
 MonoBehaviour:
   m_ObjectHideFlags: 0

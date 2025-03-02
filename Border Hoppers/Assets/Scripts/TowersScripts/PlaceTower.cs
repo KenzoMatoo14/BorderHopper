@@ -6,6 +6,7 @@ public class PlaceTower : MonoBehaviour
     public string towerType;
     public int towerCost = 30;
     public GameObject policeTowerPrefab;
+    public GameObject BorderPatrolPrefab;
 
     void OnMouseDown()
     {
@@ -22,13 +23,22 @@ public class PlaceTower : MonoBehaviour
             }
             else if (towerType == "Add Tower 2")
             {
-                newObject = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                newObject = Instantiate(BorderPatrolPrefab);
+
+                // Asegurar que BorderPatrol se instancie con y = 0.76
+                if (newObject != null)
+                {
+                    Vector3 newPosition = transform.position;
+                    newPosition.y = 0.76f;
+                    newObject.transform.position = newPosition;
+                }
             }
 
-            if (newObject != null)
+            if (newObject != null && towerType != "Add Tower 2")
             {
-                newObject.transform.position = transform.position;
+                newObject.transform.position = transform.position; // Para las demás torres
             }
+
 
             Destroy(gameObject);
 

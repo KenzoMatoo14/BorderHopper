@@ -8,15 +8,17 @@ TagManager:
   - Inmigrant
   - Black
   - Chinese
+  - emptyPlace
+  - bullet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Bullet
   - Water
   - UI
-  - 
-  - 
+  - BlackMan
+  - Mexican
   - 
   - 
   - 

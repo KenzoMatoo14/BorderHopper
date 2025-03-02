@@ -5,7 +5,7 @@
     {
         damage = 2;
         range = 20.0f;
-        cost = 50;
+        cost = 30;
         firerate = 1.5f;
         prioritizeBlackMan = true;
     }

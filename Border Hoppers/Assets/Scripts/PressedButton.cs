@@ -3,6 +3,7 @@ using UnityEngine;
 public class PressedButton : MonoBehaviour
 {
     public GameObject policeTowerPrefab;
+    public GameObject BorderPatrolPrefab;
 
     //La función solo podrá recibir un parámetro.
     public void ShowEmptyPlaces(string towerType)
@@ -20,6 +21,7 @@ public class PressedButton : MonoBehaviour
             PlaceTower placeTower = place.AddComponent<PlaceTower>();
             placeTower.towerType = towerType;
             placeTower.policeTowerPrefab = policeTowerPrefab;
+            placeTower.BorderPatrolPrefab = BorderPatrolPrefab;
         }
     }
 }

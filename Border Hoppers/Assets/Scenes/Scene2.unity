@@ -262,6 +262,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -40
       objectReference: {fileID: 0}
+    - target: {fileID: 2054888660209203992, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2054888660209203992, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 448990633200746297}
+    - target: {fileID: 2054888660209203992, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2054888660209203992, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ShowEmptyPlaces
+      objectReference: {fileID: 0}
+    - target: {fileID: 2054888660209203992, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PressedButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2054888660209203992, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Add Tower 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3146834365127569406, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -833,6 +857,10 @@ PrefabInstance:
       propertyPath: policeTowerPrefab
       value: 
       objectReference: {fileID: 3436982969466203123, guid: 411669d5e1f37c741abb6f7b64b9a094, type: 3}
+    - target: {fileID: 9083111606364816941, guid: 4582036b50af6584588bd8251ff2801b, type: 3}
+      propertyPath: BorderPatrolPrefab
+      value: 
+      objectReference: {fileID: 9016424089883477304, guid: 7e5832781ac56a24c955f618e00fbdd6, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
