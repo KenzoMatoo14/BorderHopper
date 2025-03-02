@@ -20,13 +20,6 @@ public class BorderPatrolVanSpawner : Tower
     public float spawnRate = 20; // How often a van spawns
 
     private List<GameObject> pathVertices; // Waypoints from PathGenerator
-    void Awake()
-    {
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(gameObject);
-    }
     void Start()
     {
         pathVertices = PathGenerator.Instance.pathVertices; // Get waypoints
