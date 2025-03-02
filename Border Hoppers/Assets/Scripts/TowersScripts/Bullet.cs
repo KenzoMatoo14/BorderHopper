@@ -54,6 +54,7 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Bullet hit: " + other.gameObject.name + " (Tag: " + other.tag + ")");
         Inmigrant enemy = other.GetComponent<Inmigrant>();
         if (enemy != null)
         {
@@ -61,5 +62,6 @@ public class Bullet : MonoBehaviour
             Debug.Log("Impacto en " + enemy.gameObject.name + " con " + damage + " de daño.");
             Destroy(gameObject);
         }
+
     }
 }

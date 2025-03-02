@@ -4,7 +4,7 @@ public class InmigrantSpawner : MonoBehaviour
 {
     public static InmigrantSpawner spawner;
 
-    public GameObject Inmigrant;
+    public GameObject[] inmigrantPrefabs; // Array of different immigrant prefabs
     public int NumberInmigrant = 10;
     private int spawnedCount = 0; // Tracks how many have been spawned
     private float currentTime; // Time to next spawn
@@ -39,9 +39,12 @@ public class InmigrantSpawner : MonoBehaviour
         }
         else
         {
-            // Spawn a new immigrant
-            GameObject c = Instantiate(Inmigrant);
-            c.transform.position = transform.position;
+            // Randomly select an immigrant type
+            int randomIndex = Random.Range(0, inmigrantPrefabs.Length);
+            GameObject selectedPrefab = inmigrantPrefabs[randomIndex];
+
+            // Spawn the selected immigrant
+            GameObject newInmigrant = Instantiate(selectedPrefab, transform.position, Quaternion.identity);
 
             Debug.Log("Enemy spawned after " + currentTime + " seconds");
 

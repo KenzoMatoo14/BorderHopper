@@ -4,7 +4,6 @@ public class Inmigrant : MonoBehaviour
 {
     public int life = 1;
     public float speed = 2f;
-    public int crim = 10;
     public int earn = 10;
 
     public GameObject audioSourcePrefab;
@@ -22,20 +21,30 @@ public class Inmigrant : MonoBehaviour
         if (boxCol == null)
         {
             boxCol = gameObject.AddComponent<BoxCollider>();
-            boxCol.isTrigger = false;
-            boxCol.size = new Vector3(3f, 3f, 3f);
-            Debug.Log(gameObject.name + " ahora tiene un BoxCollider.");
         }
+        boxCol.isTrigger = false;
+
+        Vector3 baseSize = new Vector3(3f, 3f, 4f);
+
+        // Ajustamos el tamaño en función de la escala del objeto
+        Vector3 adjustedSize = new Vector3(
+            baseSize.x / transform.lossyScale.x,
+            baseSize.y / transform.lossyScale.y,
+            baseSize.z / transform.lossyScale.z
+        );
+
+        boxCol.size = adjustedSize;
+        boxCol.center = new Vector3(0, 0, adjustedSize.z); // Ajustar centro dinámicamente
 
         // Luego agregar Rigidbody
         Rigidbody rb = GetComponent<Rigidbody>();
         if (rb == null)
         {
             rb = gameObject.AddComponent<Rigidbody>();
-            rb.isKinematic = true;
-            rb.useGravity = false;
-            Debug.Log(gameObject.name + " ahora tiene un Rigidbody.");
         }
+        rb.isKinematic = true;
+        rb.useGravity = false;
+        Debug.Log(gameObject.name + " ahora tiene un Rigidbody.");
     }
 
     public void TakeDamage(int damage)

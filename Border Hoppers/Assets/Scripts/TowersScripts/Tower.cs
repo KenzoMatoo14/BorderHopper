@@ -6,5 +6,5 @@ public class Tower : MonoBehaviour
     public float range = 1;
     public int cost = 1;
     public float firerate = 1;
-
+    public bool prioritizeBlackMan = false;
 }

@@ -63,19 +63,41 @@ public class TowerShooting : MonoBehaviour
     {
         GameObject[] inmigrants = GameObject.FindGameObjectsWithTag("Inmigrant");
         float closestDistance = tower.range; // Only consider within range
-        Transform closestTarget = null;
+        Transform closestBlackMan = null;
+        float closestBlackManDistance = closestDistance; // Closest BlackMan distance
+
+        Transform closestOtherTarget = null;
+        float closestOtherDistance = closestDistance; // Closest non-BlackMan distance
 
         foreach (GameObject inmigrant in inmigrants)
         {
             float distance = Vector3.Distance(transform.position, inmigrant.transform.position);
+
             if (distance < closestDistance)
             {
-                closestDistance = distance;
-                closestTarget = inmigrant.transform;
+                // Check if the immigrant is a BlackMan
+                if (tower.prioritizeBlackMan && inmigrant.GetComponent<BlackMan>() != null)
+                {
+                    // Only update if it's the closest BlackMan found
+                    if (distance < closestBlackManDistance)
+                    {
+                        closestBlackManDistance = distance;
+                        closestBlackMan = inmigrant.transform;
+                    }
+                }
+                else
+                {
+                    // Only update if it's the closest non-BlackMan found
+                    if (distance < closestOtherDistance)
+                    {
+                        closestOtherDistance = distance;
+                        closestOtherTarget = inmigrant.transform;
+                    }
+                }
             }
         }
-
-        target = closestTarget; // Set the closest target within range
+        // Prioritize BlackMan if found, otherwise fallback to the closest target
+        target = closestBlackMan ?? closestOtherTarget;
     }
     void Shoot()
     {
@@ -93,6 +115,7 @@ public class TowerShooting : MonoBehaviour
             bulletScript.SetTarget(target);
             bulletScript.SetDamage(tower.damage);
             audioSource.PlayOneShot(shot);
+            Debug.Log("Bullet fired at: " + target.name);
         }
     }
     

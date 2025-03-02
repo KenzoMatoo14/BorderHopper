@@ -7,5 +7,6 @@
         range = 20.0f;
         cost = 50;
         firerate = 1.5f;
+        prioritizeBlackMan = true;
     }
 }

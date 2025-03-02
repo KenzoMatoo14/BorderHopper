@@ -16,7 +16,7 @@ public class TacoBell : MonoBehaviour
         if (col == null)
         {
             col = gameObject.AddComponent<BoxCollider>();
-            Debug.Log(" BoxCollider added to"  + gameObject.name);
+            Debug.Log(" BoxCollider added to" + gameObject.name);
         }
 
         col.isTrigger = true;
@@ -30,7 +30,7 @@ public class TacoBell : MonoBehaviour
         if (inmigrant != null)
         {
             Debug.Log("Inmigrant arrived");
-            Hire(inmigrant.crim);
+            Hire(inmigrant.life);
             audioSource.PlayOneShot(arrival);
             Destroy(other.gameObject);
         }
