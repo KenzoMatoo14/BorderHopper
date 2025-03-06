@@ -19,9 +19,9 @@ public class PressedButton : MonoBehaviour
             }
 
             PlaceTower placeTower = place.AddComponent<PlaceTower>();
-            placeTower.towerType = towerType;
+            placeTower.selectedTowerType = towerType; // Pass selected tower type
             placeTower.policeTowerPrefab = policeTowerPrefab;
-            placeTower.BorderPatrolPrefab = BorderPatrolPrefab;
+            placeTower.borderPatrolPrefab = BorderPatrolPrefab;
         }
     }
 }

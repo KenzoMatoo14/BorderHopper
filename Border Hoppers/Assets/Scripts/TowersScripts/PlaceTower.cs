@@ -3,10 +3,31 @@ using UnityEngine;
 public class PlaceTower : MonoBehaviour
 {
     //Se cambiarán por atributos de la clase "torre"
-    public string towerType;
-    public int towerCost = 30;
+    public string selectedTowerType;
+    public int towerCost;
     public GameObject policeTowerPrefab;
-    public GameObject BorderPatrolPrefab;
+    public GameObject borderPatrolPrefab;
+    void Start()
+    {
+        SetTowerCost();
+    }
+
+    public void SetTowerCost()
+    {
+        // Set the tower cost based on the selected type
+        if (selectedTowerType == "Add Tower 1")
+        {
+            Tower tower = policeTowerPrefab.GetComponent<Tower>();
+            if (tower != null)
+                towerCost = tower.cost;
+        }
+        else if (selectedTowerType == "Add Tower 2")
+        {
+            Tower tower = borderPatrolPrefab.GetComponent<Tower>();
+            if (tower != null)
+                towerCost = tower.cost;
+        }
+    }
 
     void OnMouseDown()
     {
@@ -16,14 +37,14 @@ public class PlaceTower : MonoBehaviour
 
             GameManager.manager.AddCash(-towerCost);
 
-            if (towerType == "Add Tower 1")
+            if (selectedTowerType == "Add Tower 1")
             {
                 newObject = Instantiate(policeTowerPrefab);
 
             }
-            else if (towerType == "Add Tower 2")
+            else if (selectedTowerType == "Add Tower 2")
             {
-                newObject = Instantiate(BorderPatrolPrefab);
+                newObject = Instantiate(borderPatrolPrefab);
 
                 // Asegurar que BorderPatrol se instancie con y = 0.76
                 if (newObject != null)
@@ -34,7 +55,7 @@ public class PlaceTower : MonoBehaviour
                 }
             }
 
-            if (newObject != null && towerType != "Add Tower 2")
+            if (newObject != null && selectedTowerType != "Add Tower 2")
             {
                 newObject.transform.position = transform.position; // Para las demás torres
             }

@@ -9,24 +9,30 @@ public class FreeCameraController : MonoBehaviour
     private float yaw = 0f; // Rotation around the Y axis
     private float pitch = 0f; // Rotation around the X axis
 
-    private bool isFreeMovement = true; // Toggle between camera states
+    private bool isRotating = false; // Track if we are rotating the camera
 
     void Start()
     {
-        SetFreeMovement(true); // Start in Free Movement mode
+        Cursor.lockState = CursorLockMode.None; // Ensure cursor is always free
+        Cursor.visible = true;
     }
 
     void Update()
     {
-        // Toggle camera mode with Escape key
-        if (Input.GetKeyDown(KeyCode.Escape))
+        // Start rotating when right mouse button is pressed
+        if (Input.GetMouseButtonDown(1))
         {
-            isFreeMovement = !isFreeMovement;
-            SetFreeMovement(isFreeMovement);
+            isRotating = true;
         }
 
-        // Rotate camera only in Free Movement mode
-        if (isFreeMovement)
+        // Stop rotating when right mouse button is released
+        if (Input.GetMouseButtonUp(1))
+        {
+            isRotating = false;
+        }
+
+        // Rotate camera only when right mouse button is held
+        if (isRotating)
         {
             RotateCamera();
         }
