@@ -7,6 +7,7 @@ public class BlackMan : Inmigrant
         base.Awake();
 
         life = 10;  
-        speed = 3f; 
+        speed = 3f;
+        earn = 15;
     }
 }

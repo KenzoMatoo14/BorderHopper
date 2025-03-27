@@ -39,14 +39,26 @@ public class InmigrantSpawner : MonoBehaviour
         }
         else
         {
+            if (spawnedCount >= NumberInmigrant) return;
+
+            // Ensure PathGenerator exists and has path vertices
+            if (PathGenerator.Instance == null || PathGenerator.Instance.pathVertices.Count == 0)
+            {
+                Debug.LogWarning("PathGenerator is not ready or has no vertices!");
+                return;
+            }
+
+            // Get the first vertex position
+            Vector3 spawnPosition = PathGenerator.Instance.pathVertices[0].transform.position;
+
             // Randomly select an immigrant type
             int randomIndex = Random.Range(0, inmigrantPrefabs.Length);
             GameObject selectedPrefab = inmigrantPrefabs[randomIndex];
 
             // Spawn the selected immigrant
-            GameObject newInmigrant = Instantiate(selectedPrefab, transform.position, Quaternion.identity);
+            GameObject newInmigrant = Instantiate(selectedPrefab, spawnPosition, Quaternion.identity);
 
-            Debug.Log("Enemy spawned after " + currentTime + " seconds");
+            //Debug.Log("Enemy spawned after " + currentTime + " seconds");
 
             spawnedCount++; // Increase the count
 

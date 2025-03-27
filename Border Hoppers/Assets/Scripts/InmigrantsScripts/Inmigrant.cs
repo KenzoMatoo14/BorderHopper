@@ -47,7 +47,7 @@ public class Inmigrant : MonoBehaviour
         Debug.Log(gameObject.name + " ahora tiene un Rigidbody.");
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         if (life <= 0) return;
 

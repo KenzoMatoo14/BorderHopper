@@ -1212,6 +1212,10 @@ PrefabInstance:
       propertyPath: 'inmigrantPrefabs.Array.data[1]'
       value: 
       objectReference: {fileID: 491775779300350121, guid: 046f9cc924e580242abcbd9d5359a763, type: 3}
+    - target: {fileID: 7294723971755052008, guid: 98ab28c2b74d8be4684716a64a0bd3f4, type: 3}
+      propertyPath: 'inmigrantPrefabs.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2564422439539382878, guid: 2251de37dea66bb4397ceee4d38fbfd8, type: 3}
     - target: {fileID: 7506173896102949988, guid: 98ab28c2b74d8be4684716a64a0bd3f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

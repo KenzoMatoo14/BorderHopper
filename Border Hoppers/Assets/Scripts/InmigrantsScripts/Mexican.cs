@@ -7,6 +7,7 @@ public class Mexican : Inmigrant
         base.Awake();
 
         life = 4;  
-        speed = 6f; 
+        speed = 6f;
+        earn = 10;
     }
 }

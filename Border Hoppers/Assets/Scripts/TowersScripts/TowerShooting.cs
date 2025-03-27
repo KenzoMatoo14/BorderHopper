@@ -56,7 +56,7 @@ public class TowerShooting : MonoBehaviour
         Quaternion targetRotation = Quaternion.Euler(-90, angleY, 0);
 
         // Smoothly rotate towards the target
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
     }
 
     void FindClosestInmigrant()
