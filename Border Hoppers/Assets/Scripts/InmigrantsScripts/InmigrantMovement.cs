@@ -14,6 +14,10 @@ public class InmigrantMovement : MonoBehaviour
     {
         inmigrant = GetComponent<Inmigrant>();
         animator = inmigrant.getAnimator();
+        if (animator != null)
+        {
+            Debug.Log("Animator encontrado: " + animator);
+        }
         // Get the path vertices from the PathGenerator Singleton
         pathVertices = PathGenerator.Instance.pathVertices;
 
