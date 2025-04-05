@@ -12,6 +12,13 @@ public class Inmigrant : MonoBehaviour
     public AudioClip damageSound;
     public AudioClip deathSound;
 
+    public Animator animator;
+
+    public Animator getAnimator()
+    {
+        return animator;
+    }
+
     protected virtual void Awake()
     {
         audioSourceInstance = Instantiate(audioSourcePrefab, transform);
@@ -34,7 +41,7 @@ public class Inmigrant : MonoBehaviour
         );
 
         boxCol.size = adjustedSize;
-        boxCol.center = new Vector3(0, 0, adjustedSize.z); // Ajustar centro dinámicamente
+        boxCol.center = new Vector3(0, adjustedSize.y/2, adjustedSize.z); // Ajustar centro dinámicamente
 
         // Luego agregar Rigidbody
         Rigidbody rb = GetComponent<Rigidbody>();
@@ -57,6 +64,8 @@ public class Inmigrant : MonoBehaviour
         // When the immigrant dies
         if (life <= 0 && GameManager.manager != null)
         {
+            speed = 0;
+            animator.SetBool("isDead", true);
             audioSource.PlayOneShot(deathSound);
             GameManager.manager.AddCash(earn);
             Debug.Log(gameObject.name + " ha muerto. Se añadieron " + earn + " de dinero.");

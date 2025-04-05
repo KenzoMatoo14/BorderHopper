@@ -49,7 +49,8 @@ public class InmigrantSpawner : MonoBehaviour
             }
 
             // Get the first vertex position
-            Vector3 spawnPosition = PathGenerator.Instance.pathVertices[0].transform.position;
+            Vector3 pathPos = PathGenerator.Instance.pathVertices[0].transform.position;
+            Vector3 spawnPosition = new Vector3(pathPos.x + 1f, -0.3f, pathPos.z); //The Mexican model has a little gap of 0.3
 
             // Randomly select an immigrant type
             int randomIndex = Random.Range(0, inmigrantPrefabs.Length);

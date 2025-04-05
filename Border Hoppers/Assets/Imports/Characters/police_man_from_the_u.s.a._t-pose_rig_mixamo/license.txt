@@ -1,0 +1,11 @@
+Model Information:
+* title:	Police Man from the U.S.A. (T-pose rig mixamo )
+* source:	https://sketchfab.com/3d-models/police-man-from-the-usa-t-pose-rig-mixamo-c6d330c59f6c41eea41c71e00e39334b
+* author:	ustoopia (https://sketchfab.com/ustoopia)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Police Man from the U.S.A. (T-pose rig mixamo )" (https://sketchfab.com/3d-models/police-man-from-the-usa-t-pose-rig-mixamo-c6d330c59f6c41eea41c71e00e39334b) by ustoopia (https://sketchfab.com/ustoopia) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
