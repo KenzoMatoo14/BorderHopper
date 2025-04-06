@@ -12,10 +12,12 @@ public class TowerShooting : MonoBehaviour
     private float currentTime;       // Timer for shooting
     private Transform target;        // Current target
     private Tower tower;        // Reference to Tower stats
+    private Animator animator;
 
     void Start()
     {
         tower = GetComponent<Tower>(); // Get tower stats
+        animator = tower.GetComponent<Animator>();
         currentTime = currentTime = 0f; // Start timer at 0 to allow first shot immediately
 
         audioSourceInstance = Instantiate(audioSourcePrefab, transform);
@@ -36,6 +38,10 @@ public class TowerShooting : MonoBehaviour
                 Shoot();
                 currentTime = tower.firerate; // Reset timer
             }
+        } else
+        {
+            animator.SetBool("isIdle", true);
+            animator.SetBool("isAim", false);
         }
         // Decrease timer
         if (currentTime > 0f)
@@ -48,12 +54,15 @@ public class TowerShooting : MonoBehaviour
     {
         if (target == null) return;
 
+        animator.SetBool("isIdle", false);
+        animator.SetBool("isAim", true);
+
         // Direction to the target
         Vector3 direction = (target.position - transform.position).normalized;
 
         // Only rotate on the Y-axis for 3D space
         float angleY = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-        Quaternion targetRotation = Quaternion.Euler(-90, angleY, 0);
+        Quaternion targetRotation = Quaternion.Euler(0, angleY, 0);
 
         // Smoothly rotate towards the target
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);

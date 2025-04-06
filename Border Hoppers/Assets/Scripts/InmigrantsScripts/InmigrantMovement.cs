@@ -13,7 +13,7 @@ public class InmigrantMovement : MonoBehaviour
     void Start()
     {
         inmigrant = GetComponent<Inmigrant>();
-        animator = inmigrant.getAnimator();
+        animator = inmigrant.GetComponent<Animator>();
         if (animator != null)
         {
             Debug.Log("Animator encontrado: " + animator);

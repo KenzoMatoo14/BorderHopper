@@ -11,16 +11,11 @@ public class Inmigrant : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip damageSound;
     public AudioClip deathSound;
-
-    public Animator animator;
-
-    public Animator getAnimator()
-    {
-        return animator;
-    }
+    private Animator animator;
 
     protected virtual void Awake()
     {
+        animator = GetComponent<Animator>();
         audioSourceInstance = Instantiate(audioSourcePrefab, transform);
         audioSource = audioSourceInstance.GetComponent<AudioSource>();
 

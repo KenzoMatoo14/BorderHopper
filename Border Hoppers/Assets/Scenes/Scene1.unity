@@ -754,7 +754,7 @@ PrefabInstance:
     - target: {fileID: 9083111606364816941, guid: 4582036b50af6584588bd8251ff2801b, type: 3}
       propertyPath: policeTowerPrefab
       value: 
-      objectReference: {fileID: 3436982969466203123, guid: 411669d5e1f37c741abb6f7b64b9a094, type: 3}
+      objectReference: {fileID: 8805794041435024536, guid: 7a92b1162f9bead4a8b965a0e200f35e, type: 3}
     - target: {fileID: 9083111606364816941, guid: 4582036b50af6584588bd8251ff2801b, type: 3}
       propertyPath: BorderPatrolPrefab
       value: 
@@ -1139,6 +1139,10 @@ PrefabInstance:
       propertyPath: 'inmigrantPrefabs.Array.data[0]'
       value: 
       objectReference: {fileID: 229335786052756912, guid: 004992814133f9a4893765075c4270f8, type: 3}
+    - target: {fileID: 7294723971755052008, guid: 98ab28c2b74d8be4684716a64a0bd3f4, type: 3}
+      propertyPath: 'inmigrantPrefabs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 7583212163710250992, guid: 9bae93c1732cc64499565a4de26b601a, type: 3}
     - target: {fileID: 7506173896102949988, guid: 98ab28c2b74d8be4684716a64a0bd3f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
