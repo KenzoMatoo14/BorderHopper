@@ -17,6 +17,7 @@ public class MapGenerator : MonoBehaviour
     public List<GameObject> pathVertices = new List<GameObject>(); // List to store the path vertices
     private HashSet<Vector3> occupiedPositions = new HashSet<Vector3>(); // List to save the path's location
     public GameObject[] sceneryObjects;
+    public GameObject[] sceneryBackground;
 
 
     void Start()
@@ -92,6 +93,7 @@ public class MapGenerator : MonoBehaviour
             {
                 int index = Random.Range(0, sceneryObjects.Length);
                 GameObject scenery = Instantiate(sceneryObjects[index], position, Quaternion.identity);
+                scenery.transform.localScale *= 1.2f;
                 if (index != 0)
                 {
                     scenery.transform.rotation = Quaternion.Euler(270, 0, 0);
@@ -103,6 +105,26 @@ public class MapGenerator : MonoBehaviour
                 usedPositions.Add(position);
                 placedObjects++;
             }
+        }
+
+        float totalBackgroundObjects = xRange/50;
+        int placedBackgroundObjects = 0;
+        float X = 20;
+        while (placedBackgroundObjects < totalBackgroundObjects)
+        {
+            Vector3 positionLeft = new Vector3(X, 0f, zMinusRange-10);
+            Vector3 positionRight = new Vector3(X, 0f, zPlusRange+10);
+            int index = Random.Range(0, sceneryBackground.Length);
+            GameObject mountainL = Instantiate(sceneryBackground[index], positionLeft, Quaternion.identity);
+            GameObject mountainR = Instantiate(sceneryBackground[index], positionRight, Quaternion.identity);
+            if (index == 1 || index == 0)
+            {
+                mountainL.transform.position = new Vector3(X, 0f, zMinusRange - 20);
+                mountainR.transform.position = new Vector3(X, 0f, zPlusRange + 20);
+            }   
+            X += 50;
+            placedBackgroundObjects++;
+            Debug.Log("Mountain instantiated in: " + positionLeft + " and " + positionRight);
         }
     }
     void FillOccupiedPositions()
