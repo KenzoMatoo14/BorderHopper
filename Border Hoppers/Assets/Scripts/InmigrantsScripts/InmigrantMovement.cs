@@ -8,10 +8,16 @@ public class InmigrantMovement : MonoBehaviour
     public float rotationSpeed = 5f;
     private float originalY; // Stores the original Y position
     private Inmigrant inmigrant; // Generic reference to the base class
+    private Animator animator;
 
     void Start()
     {
         inmigrant = GetComponent<Inmigrant>();
+        animator = inmigrant.GetComponent<Animator>();
+        if (animator != null)
+        {
+            Debug.Log("Animator encontrado: " + animator);
+        }
         // Get the path vertices from the PathGenerator Singleton
         pathVertices = PathGenerator.Instance.pathVertices;
 
@@ -53,6 +59,8 @@ public class InmigrantMovement : MonoBehaviour
         {
             currentTargetIndex++; // Move to the next vertex
         }
+
+        UpdateAnimation();
     }
     void RotateTowards(Vector3 target)
     {
@@ -60,9 +68,16 @@ public class InmigrantMovement : MonoBehaviour
         Vector3 direction = (target - transform.position).normalized;
 
         // Keep rotation only on Y axis
-        Quaternion targetRotation = Quaternion.LookRotation(new Vector3(direction.x, 90, direction.z));
+        Quaternion targetRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
 
         // Smoothly rotate towards the target rotation
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+    }
+
+    void UpdateAnimation()
+    {
+        // Change animation if it is moving
+        bool isWalking = Vector3.Distance(transform.position, pathVertices[currentTargetIndex].transform.position) > 0.1f;
+        animator.SetBool("isMoving", isWalking); // Activar o desactivar animación de movimiento
     }
 }

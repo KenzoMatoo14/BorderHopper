@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour
     public float speed = 20f;
     public int damage = 0;
     private Vector3 targetPosition; // Store the adjusted target position
+    private float lifeTime = 2f;
 
     private void Awake()
     {
@@ -24,6 +25,8 @@ public class Bullet : MonoBehaviour
         }
         rb.useGravity = false;
         rb.isKinematic = true; // Para evitar que sea afectada por la física
+
+        Destroy(gameObject, lifeTime);
     }
 
     public void SetTarget(Transform newTarget)
