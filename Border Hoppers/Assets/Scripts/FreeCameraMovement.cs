@@ -20,13 +20,13 @@ public class FreeCameraController : MonoBehaviour
     void Update()
     {
         // Start rotating when right mouse button is pressed
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(2))
         {
             isRotating = true;
         }
 
         // Stop rotating when right mouse button is released
-        if (Input.GetMouseButtonUp(1))
+        if (Input.GetMouseButtonUp(2))
         {
             isRotating = false;
         }

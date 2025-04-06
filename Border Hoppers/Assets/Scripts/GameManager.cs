@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class GameManager : MonoBehaviour
 
     public int cash = 100;
     public int criminality = 0;
-    public int remainingEnemies = 0;
+    private int remainingEnemies = 0;
 
     private bool levelStatus = false;
     private bool gameCompleted = false;
@@ -17,6 +18,14 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI levelStatusText;
     public TextMeshProUGUI sceneManagerText;
+
+    public GameObject pausePanel;
+    public Button pauseButton;
+    public Button exitButton;
+    public Button towerButton1;
+    public Button towerButton2;
+    private bool isPaused = false;
+    public TextMeshProUGUI usernameText;
 
     void Awake()
     {
@@ -28,8 +37,24 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        remainingEnemies = InmigrantSpawner.spawner.getNumberInmigrants();
-        remainingEnemies += 2;
+        Time.timeScale = 1f;
+
+        pausePanel.SetActive(false);
+        // Difficulty-based starting cash
+        int difficulty = PlayerPrefs.GetInt("Difficulty", 1); // 0=Easy, 1=Normal, 2=Hard
+        switch (difficulty)
+        {
+            case 0: cash = 100; break;
+            case 1: cash = 50; break;
+            case 2: cash = 30; break;
+        }
+
+        string username = PlayerPrefs.GetString("Username", "Guest");
+        usernameText.text = "Hello " + username;
+        exitButton.onClick.AddListener(ExitGame);
+        pauseButton.onClick.AddListener(TogglePause);
+
+        remainingEnemies = InmigrantSpawner.spawner.getNumberInmigrants() + 2;
 
         AddCash(0);
         IncreaseCriminality(0);
@@ -62,7 +87,8 @@ public class GameManager : MonoBehaviour
         if (remainingEnemies == 0 && criminality < 100 && SceneManager.GetActiveScene().name == "Scene2")
         {
             GameCompleted();
-        } else if (remainingEnemies == 0 && criminality < 100)
+        }
+        else if (remainingEnemies == 0 && criminality < 100)
         {
             LevelComplete();
         }
@@ -130,11 +156,37 @@ public class GameManager : MonoBehaviour
         if (levelStatus && gameCompleted)
         {
             Application.Quit();
-        } else if (levelStatus)
+        }
+        else if (levelStatus)
         {
             SceneManager.LoadScene("Scene2");
         }
         else
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    public void ExitGame()
+    {
+        SceneManager.LoadScene("StartMenu");
+    }
+
+    public void TogglePause()
+    {
+        isPaused = !isPaused;
+
+        if (isPaused)
+        {
+            Time.timeScale = 0f;
+            pausePanel.SetActive(true);
+            towerButton1.interactable = !isPaused;
+            towerButton2.interactable = !isPaused;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            pausePanel.SetActive(false);
+            towerButton1.interactable = !isPaused;
+            towerButton2.interactable = !isPaused;
+        }
+    }
+
 }
