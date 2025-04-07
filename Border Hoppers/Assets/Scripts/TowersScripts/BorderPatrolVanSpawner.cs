@@ -8,7 +8,7 @@ public class BorderPatrolVanSpawner : Tower
     {
         damage = 20;
         range = 1f;
-        cost = 5;
+        cost = 75;
         firerate = 0f;
         prioritizeBlackMan = false;
     }
