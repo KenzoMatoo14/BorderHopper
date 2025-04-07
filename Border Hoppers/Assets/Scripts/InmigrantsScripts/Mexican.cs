@@ -6,7 +6,7 @@ public class Mexican : Inmigrant
     {
         base.Awake();
 
-        life = 4;  
+        life = 20;  
         speed = 6f;
         earn = 10;
     }

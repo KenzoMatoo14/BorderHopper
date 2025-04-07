@@ -398,6 +398,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 249658418771675954, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
+      propertyPath: m_Pivot.y
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 249658418771675954, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.3185272
+      objectReference: {fileID: 0}
     - target: {fileID: 542291743789175925, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
       propertyPath: m_text
       value: 'Enemigos Restantes: 0'
@@ -417,6 +425,14 @@ PrefabInstance:
     - target: {fileID: 571038852944738181, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 814483423367433748, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
+      propertyPath: m_Pivot.y
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 814483423367433748, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4.197769
       objectReference: {fileID: 0}
     - target: {fileID: 2054888660209203992, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -522,6 +538,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4231318794500091656, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4231318794500091656, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4556087511482653970, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -561,6 +585,14 @@ PrefabInstance:
     - target: {fileID: 6530683808454326924, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6570140450413315852, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6570140450413315852, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 7074812119638020754, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
       propertyPath: m_text

@@ -94,7 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 10
   speed: 5
-  life: 20
+  life: 100
 --- !u!65 &948784324089123118
 BoxCollider:
   m_ObjectHideFlags: 0

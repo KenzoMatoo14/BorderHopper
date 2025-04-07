@@ -8,7 +8,7 @@ public class BorderPatrolVan : MonoBehaviour
     public float rotationSpeed = 5f;
     private float originalY;
     public float speed = 3f; // Unique speed for BorderPatrolVan
-    public int life = 20; // Van's health
+    public int life = 100; // Van's health
 
     void Start()
     {

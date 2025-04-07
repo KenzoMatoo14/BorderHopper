@@ -6,7 +6,7 @@ public class BlackMan : Inmigrant
     {
         base.Awake();
 
-        life = 10;  
+        life = 50;  
         speed = 3f;
         earn = 15;
     }
