@@ -608,8 +608,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
 --- !u!82 &1290478143
 AudioSource:
   m_ObjectHideFlags: 0
@@ -843,7 +841,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1443395401}
   m_CullTransparentMesh: 1
->>>>>>> 2e986c5693b650c62712882ac4f516632df59347
+ 2e986c5693b650c62712882ac4f516632df59347
 --- !u!1 &1694960323
 GameObject:
   m_ObjectHideFlags: 0

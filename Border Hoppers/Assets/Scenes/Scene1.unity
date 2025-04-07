@@ -407,6 +407,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 95672561357074284, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 542291743789175925, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
       propertyPath: m_sharedMaterial
       value: 
@@ -718,6 +722,10 @@ PrefabInstance:
     - target: {fileID: 8098138692585443627, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098138692585443627, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8626421213767862647, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1476,13 +1484,53 @@ PrefabInstance:
       propertyPath: m_text
       value: scene status
       objectReference: {fileID: 0}
+    - target: {fileID: 2603047371011388999, guid: 04580b2f55e073d488fb14639087271d, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603047371011388999, guid: 04580b2f55e073d488fb14639087271d, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603047371011388999, guid: 04580b2f55e073d488fb14639087271d, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603047371011388999, guid: 04580b2f55e073d488fb14639087271d, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
+    - target: {fileID: 2603047371011388999, guid: 04580b2f55e073d488fb14639087271d, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     - target: {fileID: 3624858554846065934, guid: 04580b2f55e073d488fb14639087271d, type: 3}
       propertyPath: m_text
       value: "\xA1level status!"
       objectReference: {fileID: 0}
+    - target: {fileID: 4497432200779173042, guid: 04580b2f55e073d488fb14639087271d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dc6fcae5f7bf67f40b51d2501c75462f, type: 3}
+    - target: {fileID: 4497432200779173042, guid: 04580b2f55e073d488fb14639087271d, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 4638449918627720197, guid: 04580b2f55e073d488fb14639087271d, type: 3}
       propertyPath: m_Name
       value: sceneManagerText
+      objectReference: {fileID: 0}
+    - target: {fileID: 5080629470070430393, guid: 04580b2f55e073d488fb14639087271d, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.22395861
+      objectReference: {fileID: 0}
+    - target: {fileID: 5080629470070430393, guid: 04580b2f55e073d488fb14639087271d, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.8792453
+      objectReference: {fileID: 0}
+    - target: {fileID: 5080629470070430393, guid: 04580b2f55e073d488fb14639087271d, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.32141677
       objectReference: {fileID: 0}
     - target: {fileID: 5080629470070430393, guid: 04580b2f55e073d488fb14639087271d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1495,6 +1543,10 @@ PrefabInstance:
     - target: {fileID: 5159576767416947982, guid: 04580b2f55e073d488fb14639087271d, type: 3}
       propertyPath: m_Name
       value: CanvasCompletedLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222536616550747216, guid: 04580b2f55e073d488fb14639087271d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8150139933731224188, guid: 04580b2f55e073d488fb14639087271d, type: 3}
       propertyPath: m_Name
