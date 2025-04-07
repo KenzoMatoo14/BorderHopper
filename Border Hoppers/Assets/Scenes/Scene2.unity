@@ -552,7 +552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6530683808454326924, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7074812119638020754, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
       propertyPath: m_text
@@ -564,11 +564,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8098138692585443627, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8216504018338123251, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8626421213767862647, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1236,6 +1236,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8099905167968637978, guid: 166b24e1515d0964f97bb31908eed2be, type: 3}
+      propertyPath: sceneryBackground.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099905167968637978, guid: 166b24e1515d0964f97bb31908eed2be, type: 3}
       propertyPath: 'sceneryObjects.Array.data[0]'
       value: 
       objectReference: {fileID: 919132149155446097, guid: 16581fa6159757a40a0e93b4bc87be96, type: 3}
@@ -1279,6 +1283,18 @@ PrefabInstance:
       propertyPath: 'sceneryObjects.Array.data[10]'
       value: 
       objectReference: {fileID: -6689036041284674117, guid: 20f533fe9255ad3499f47075822d0685, type: 3}
+    - target: {fileID: 8099905167968637978, guid: 166b24e1515d0964f97bb31908eed2be, type: 3}
+      propertyPath: 'sceneryBackground.Array.data[0]'
+      value: 
+      objectReference: {fileID: 7466670107270075863, guid: 3577a46b98d630b4e9ae48106ca195fe, type: 3}
+    - target: {fileID: 8099905167968637978, guid: 166b24e1515d0964f97bb31908eed2be, type: 3}
+      propertyPath: 'sceneryBackground.Array.data[1]'
+      value: 
+      objectReference: {fileID: 550288005683580950, guid: 2906030a4fdef1d4c9aa61901f33f2c3, type: 3}
+    - target: {fileID: 8099905167968637978, guid: 166b24e1515d0964f97bb31908eed2be, type: 3}
+      propertyPath: 'sceneryBackground.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1459923514146028750, guid: b6fc6ec13a0fe724db51a3cf783cd3f7, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1315,6 +1331,10 @@ PrefabInstance:
     - target: {fileID: 5159576767416947982, guid: 04580b2f55e073d488fb14639087271d, type: 3}
       propertyPath: m_Name
       value: CanvasCompletedLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5159576767416947982, guid: 04580b2f55e073d488fb14639087271d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6222536616550747216, guid: 04580b2f55e073d488fb14639087271d, type: 3}
       propertyPath: m_IsActive
