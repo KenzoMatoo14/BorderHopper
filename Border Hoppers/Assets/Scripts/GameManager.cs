@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     public Button exitButton;
     public Button towerButton1;
     public Button towerButton2;
+    public Button nextLevelButton;
+    public Slider volumeSlider;
     private bool isPaused = false;
     public TextMeshProUGUI usernameText;
 
@@ -53,8 +55,12 @@ public class GameManager : MonoBehaviour
         usernameText.text = "Hello " + username;
         exitButton.onClick.AddListener(ExitGame);
         pauseButton.onClick.AddListener(TogglePause);
+        nextLevelButton.onClick.AddListener(LevelManager);
 
         remainingEnemies = InmigrantSpawner.spawner.getNumberInmigrants() + 2;
+
+        volumeSlider.value = PlayerPrefs.GetFloat("Volume", 1f);
+        volumeSlider.onValueChanged.AddListener(OnVolumeChanged);
 
         AddCash(0);
         IncreaseCriminality(0);
@@ -88,7 +94,7 @@ public class GameManager : MonoBehaviour
         {
             GameCompleted();
         }
-        else if (remainingEnemies == 0 && criminality < 100)
+        else if (remainingEnemies == 0 && criminality < 100 && SceneManager.GetActiveScene().name != "Scene2")
         {
             LevelComplete();
         }
@@ -109,6 +115,9 @@ public class GameManager : MonoBehaviour
 
         sceneManagerText.text = "Siguiente Nivel";
 
+        nextLevelButton.onClick.RemoveAllListeners();
+        nextLevelButton.onClick.AddListener(LevelManager);
+
         levelStatus = true;
 
         Cursor.lockState = CursorLockMode.None;
@@ -128,6 +137,9 @@ public class GameManager : MonoBehaviour
 
         sceneManagerText.text = "Cerrar el juego";
 
+        nextLevelButton.onClick.RemoveAllListeners();
+        nextLevelButton.onClick.AddListener(LevelManager);
+
         gameCompleted = true;
 
         Cursor.lockState = CursorLockMode.None;
@@ -145,6 +157,9 @@ public class GameManager : MonoBehaviour
 
         sceneManagerText.text = "Reintentar";
 
+        nextLevelButton.onClick.RemoveAllListeners();
+        nextLevelButton.onClick.AddListener(LevelManager);
+
         levelStatus = false;
 
         Cursor.lockState = CursorLockMode.None;
@@ -153,17 +168,31 @@ public class GameManager : MonoBehaviour
 
     public void LevelManager()
     {
-        if (levelStatus && gameCompleted)
+        if (gameCompleted)
         {
             Application.Quit();
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#endif
         }
         else if (levelStatus)
         {
-            SceneManager.LoadScene("Scene2");
+            string currentScene = SceneManager.GetActiveScene().name;
+
+            if (currentScene == "Scene1")
+                SceneManager.LoadScene("Scene2");
+            else if (currentScene == "Scene2")
+                GameCompleted();
+            else
+                SceneManager.LoadScene("StartMenu");
         }
         else
+        {
+            // Reintentar el mismo nivel
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
+
     public void ExitGame()
     {
         Time.timeScale = 1f;
@@ -188,6 +217,12 @@ public class GameManager : MonoBehaviour
             towerButton1.interactable = !isPaused;
             towerButton2.interactable = !isPaused;
         }
+    }
+
+    void OnVolumeChanged(float value)
+    {
+        AudioListener.volume = value;
+        PlayerPrefs.SetFloat("Volume", value);
     }
 
 }
