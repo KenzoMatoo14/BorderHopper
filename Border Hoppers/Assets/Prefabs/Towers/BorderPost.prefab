@@ -46,6 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087c65acdb6406244b5955cf58d412cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 20
+  range: 1
+  cost: 75
+  firerate: 0
+  prioritizeBlackMan: 0
   borderPatrolVanPrefab: {fileID: 7397527913104268643, guid: e4a71c84e53bb5b4084d37505b8f59bc, type: 3}
   spawnRate: 20
 --- !u!1001 &2873334419514541263

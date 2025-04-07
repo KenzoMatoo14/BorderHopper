@@ -550,6 +550,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6530683808454326924, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7074812119638020754, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
       propertyPath: m_text
       value: Add Police
@@ -557,6 +561,14 @@ PrefabInstance:
     - target: {fileID: 8098138692585443627, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098138692585443627, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216504018338123251, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8626421213767862647, guid: aa8cce480a8f5d94bbc6736572544274, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1319,6 +1331,14 @@ PrefabInstance:
     - target: {fileID: 5159576767416947982, guid: 04580b2f55e073d488fb14639087271d, type: 3}
       propertyPath: m_Name
       value: CanvasCompletedLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5159576767416947982, guid: 04580b2f55e073d488fb14639087271d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222536616550747216, guid: 04580b2f55e073d488fb14639087271d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8150139933731224188, guid: 04580b2f55e073d488fb14639087271d, type: 3}
       propertyPath: m_Name
